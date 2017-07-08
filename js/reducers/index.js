@@ -33,8 +33,7 @@ export const gameReducer = (state=initalState, action) => {
 		}		
 	}
 	else if(action.type === actions.CHECK_TEMP){
-		let currGuess = state.currentGuess[0];
-		let prevGuess = state.currentGuess[1];
+		let currentGuess = state.currentGuess[0];
 		let diff = state.correctNum - state.currentGuess;
 
 		if(state.currentGuess === state.correctNum){
@@ -60,21 +59,30 @@ export const gameReducer = (state=initalState, action) => {
 	}
 
 	else if(action.type === actions.COMP_TEMP){
-		let currentGuess = state.currentGuess[0];
-		let previousGuess = state.currentGuess[1];
-		let diff = Math.abs(state.correctNum - currentGuess);
-		let diffPrev = Math.abs(state.correctNum - previousGuess);
+		if(state.currentGuess.length >= 2){
+			let currentGuess = state.currentGuess[0];
+			let previousGuess = state.currentGuess[1];
+			let diff = Math.abs(state.correctNum - currentGuess);
+			let diffPrev = Math.abs(state.correctNum - previousGuess);
 
-		if(diff > diffPrev){
-			return Object.assign({}, state, {
-				compTemp: 'COLDER'
-			});
+			if(diff === diffPrev){
+				//
+			}
+			else if(diff > diffPrev){
+				return Object.assign({}, state, {
+					compTemp: 'COLDER'
+				});
+			}
+			else {
+				return Object.assign({}, state, {
+					compTemp: 'WARMER'
+				});
+			}
 		}
 		else {
-			return Object.assign({}, state, {
-				compTemp: 'WARMER'
-			});
+			return state;
 		}
+		
 	}
 	return state;
 }

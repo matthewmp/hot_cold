@@ -31,6 +31,7 @@ export const checkTemp = () => {
 // Check temp of current # to previous #
 export const COMP_TEMP = 'COMP_TEMP';
 export const compTemp = () =>{
+	console.log('COMP')
 	return {
 		type: COMP_TEMP
 	};

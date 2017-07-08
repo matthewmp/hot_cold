@@ -12,24 +12,24 @@ export class Game extends React.Component{
 	testFunc(){
 
 		this.props.dispatch(actions.genNum());
-		this.props.dispatch(actions.genNum());
 
-		// this.props.dispatch(actions.guessNum(30));
-		// this.props.dispatch(actions.checkTemp);
-		// this.props.dispatch(actions.compTemp);
-
-		// this.props.dispatch(actions.guessNum(30));
-		// this.props.dispatch(actions.checkTemp);
-		// this.props.dispatch(actions.compTemp);
-
+		this.props.dispatch(actions.guessNum(30));
+		this.props.dispatch(actions.checkTemp());
+		this.props.dispatch(actions.compTemp());
+		
+		this.props.dispatch(actions.guessNum(20));
+		this.props.dispatch(actions.checkTemp());
+		this.props.dispatch(actions.compTemp());
 
 
-		console.log(store.getState());
+
+		//console.log(store.getState());
 	}
 
 	render(){
+		console.log(this.props);
 		return(
-			<p onClick={this.testFunc}> Test {this.props.temp}  </p>
+			<p onClick={this.testFunc}> Test {this.props.test.currentGuess}  </p>
 		);
 	}
 }
