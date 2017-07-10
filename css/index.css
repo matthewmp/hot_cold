@@ -1,0 +1,89 @@
+.game{
+	max-width: 80%;
+	margin: auto;
+}
+
+.nav-bar{
+	min-height: 50px;
+	background: #241C1A;
+}
+
+.how-to, .new-game{
+	color: #fff;
+	padding: 20px;	
+	cursor: pointer;
+}
+
+
+.how-to{
+	float: left;
+}
+
+.new-game{
+	float: right;
+}
+
+.game-temp{
+	min-height: 50px;
+	background: #EEEAF4;
+	text-align: center;
+	line-height: 50px;
+	color: #BE2818;
+}
+
+.comp-temp{
+	min-height: 20px;
+	background: #F3F1F3;
+	text-align: center;
+	color: #BE2818;
+}
+
+input{
+	height: 20px;
+	width: 50px;
+	border: 1px solid black;	
+}
+
+.inputs{
+	text-align: center;
+}
+
+button{
+	width: 50px;
+	height: 26px;
+	border: none;
+	background: #A72D14;
+	border-radius: 3px;
+	color: #fff;
+}
+
+.guess-output{
+	text-align: center;
+}
+
+.rules{
+	padding: 20px;
+	position: absolute;
+	background: #2d1412;
+	color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

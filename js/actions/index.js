@@ -30,17 +30,16 @@ export const checkTemp = () => {
 
 // Check temp of current # to previous #
 export const COMP_TEMP = 'COMP_TEMP';
-export const compTemp = () =>{
-	console.log('COMP')
+export const compTemp = () =>{	
 	return {
 		type: COMP_TEMP
 	};
 }
 
 // Check if player won
-export const DID_WIN = 'DID_WIN';
-export const didWin = () => {
+export const WIN = 'WIN';
+export const win = () => {
 	return {
-		type: DID_WIN
+		type: WIN
 	};
 }

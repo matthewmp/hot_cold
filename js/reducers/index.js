@@ -1,6 +1,7 @@
 import * as actions from '../actions/index';
 
 const initalState = {
+	correctNum: Math.floor(Math.random(1) * 100),
 	currentGuess: [],
 	temp: actions.COLD,
 	compTemp: '',
@@ -8,7 +9,7 @@ const initalState = {
 }
 
 export const gameReducer = (state=initalState, action) => {
-	if(action.type === actions.DID_WIN){
+	if(action.type === actions.WIN){
 		if(state.currentGuess === state.correctNum){
 			return Object.assign({}, state, {
 				won: true
@@ -34,9 +35,9 @@ export const gameReducer = (state=initalState, action) => {
 	}
 	else if(action.type === actions.CHECK_TEMP){
 		let currentGuess = state.currentGuess[0];
-		let diff = state.correctNum - state.currentGuess;
+		let diff = state.correctNum - currentGuess;
 
-		if(state.currentGuess === state.correctNum){
+		if(Number(currentGuess) === state.correctNum){			
 			return Object.assign({}, state, {
 				won: true
 			});
