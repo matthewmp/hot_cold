@@ -68,11 +68,25 @@ button{
 	color: #fff;
 }
 
+.btn2{
+	width: 100px;
+	height: 40px;
+}
 
+.won{
+	margin: auto;
+	text-align: center;
+	position: absolute;
+	width: 80%;
+	min-height: 400px;
+	background: blue;
+	color: #fff;
+}
 
-
-
-
+#fewest-guesses{
+	color: #A72D14;
+	font-size: 1.5em;
+}
 
 
 

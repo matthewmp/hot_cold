@@ -1,11 +1,15 @@
-import * as actions from '../actions/index';
+import * as actions from '../actions';
 
-const initalState = {
-	correctNum: Math.floor(Math.random(1) * 100),
-	currentGuess: [],
-	temp: actions.COLD,
-	compTemp: '',
-	won: false
+const initalState = getInitalState();
+
+function getInitalState(){
+	 return  {
+		correctNum: Math.floor(Math.random(1) * 100),
+		currentGuess: [],
+		temp: actions.COLD,
+		compTemp: '',
+		won: false
+	}
 }
 
 export const gameReducer = (state=initalState, action) => {
@@ -84,6 +88,14 @@ export const gameReducer = (state=initalState, action) => {
 			return state;
 		}
 		
+	}
+	else if(action.type === actions.FEW_GUESSES){		
+		return Object.assign({}, state, {
+			guesses: action.guesses
+		})
+	}
+	else if(action.type === actions.RESET){		
+		return Object.assign({}, state, getInitalState())
 	}
 	return state;
 }
